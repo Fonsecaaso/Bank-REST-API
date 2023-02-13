@@ -1,6 +1,8 @@
-# sistema-bancario
+# API de Serviços Financeiros
 
 Sistema com as funcionalidades de realizar depósito, saque, transferência e visualizar saldo em conta.
+
+Para executar esta aplicação basta rodar o comando `docker-compose up -d` no terminal na mesma pasta que está o documento docker-compose.yml
 
 ## Endpoints:
 
