@@ -46,6 +46,12 @@ Payload:
 }
 ```
 
+
+## Arquitetura de v1 e v2
+Hoje tenho implementado a API de Serviços Financeiros em v1, logo implementarei a arquitetura de v2.
+
 ![ideias de projeto-Page-3 drawio](https://user-images.githubusercontent.com/26654992/226224990-b12d4b30-4393-4564-9791-9ab31c85c3a4.png)
+
+## That's all folks!
 
 ![](https://media.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif)
