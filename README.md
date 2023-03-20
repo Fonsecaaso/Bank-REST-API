@@ -4,6 +4,8 @@ Sistema com as funcionalidades de realizar depósito, saque, transferência e vi
 
 Para executar esta aplicação basta rodar o comando `docker-compose up -d` no terminal na mesma pasta que está o documento docker-compose.yml
 
+Observação: hoje tenho a v1 implementada, prestes a implementar a v2. Especificações sobre cada versão no final deste README.
+
 ## Endpoints:
 
 1. Resetar banco `POST /reset`
@@ -43,5 +45,7 @@ Payload:
 "amount":10
 }
 ```
+
+![ideias de projeto-Page-3 drawio](https://user-images.githubusercontent.com/26654992/226224990-b12d4b30-4393-4564-9791-9ab31c85c3a4.png)
 
 ![](https://media.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif)
