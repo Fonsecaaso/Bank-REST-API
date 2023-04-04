@@ -111,14 +111,12 @@ public class BankService {
 
         Destination destination = new Destination(req.getDestination(),balance);
 
-        ResponseDeposit res = new ResponseDeposit();
-        res.setDestination(destination);
-
+        ResponseDeposit res = ResponseDeposit.builder().destination(destination).build();
         return new ResponseEntity<>(res,HttpStatus.CREATED);
     }
 
 
-    private boolean accountNotExist(String id) {
+    public boolean accountNotExist(String id) {
         return !bankRepository.accountExists(id);
     }
 
