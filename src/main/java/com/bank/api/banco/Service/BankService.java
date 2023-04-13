@@ -66,7 +66,7 @@ public class BankService {
         res.setOrigin(origin);
         res.setDestination(destination);
 
-        return new ResponseEntity<>(res,HttpStatus.CREATED);
+        return new ResponseEntity<>(res,HttpStatus.OK);
     }
 
     private ResponseEntity<?> withdraw(Request req) {
@@ -90,7 +90,7 @@ public class BankService {
         ResponseWithdraw res = new ResponseWithdraw();
         res.setOrigin(origin);
 
-        return new ResponseEntity<>(res,HttpStatus.CREATED);
+        return new ResponseEntity<>(res,HttpStatus.OK);
     }
 
     private ResponseEntity<?> deposit(Request req) {
@@ -100,9 +100,12 @@ public class BankService {
             3. search balance
             4. add amount to previous value (balance)
          */
-
-        if (accountNotExist(req.getDestination()))
+        boolean createdNow = false;
+        
+        if (accountNotExist(req.getDestination())){
             bankRepository.createAccount(req.getDestination());
+            createdNow = false;
+        }
 
         int balance = bankRepository.getBalance(req.getDestination());
         balance += req.getAmount();
@@ -112,7 +115,11 @@ public class BankService {
         Destination destination = new Destination(req.getDestination(),balance);
 
         ResponseDeposit res = ResponseDeposit.builder().destination(destination).build();
-        return new ResponseEntity<>(res,HttpStatus.CREATED);
+        
+        if (createdNow)
+            return new ResponseEntity<>(res,HttpStatus.CREATED);
+        else
+            return new ResponseEntity<>(res,HttpStatus.OK);
     }
 
 
